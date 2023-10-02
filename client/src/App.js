@@ -67,7 +67,7 @@ function App() {
       const updatedItem = listItems[updatedItemIndex].item = updateItemText;
       console.log(updatedItem)
       setUpdateItemText('');
-      
+      setIsUpdating('');
     }catch(err){
       console.log(err);
     }
