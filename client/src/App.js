@@ -66,8 +66,8 @@ function App() {
       const updatedItemIndex = listItems.findIndex(item => item._id === isUpdating);
       const updatedItem = listItems[updatedItemIndex].item = updateItemText;
       console.log(updatedItem)
+      setUpdateItemText('');
       
-      setIsUpdating('');
     }catch(err){
       console.log(err);
     }
