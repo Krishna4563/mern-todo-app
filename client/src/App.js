@@ -19,6 +19,7 @@ function App() {
     try{
       const res = await axios.post('https://mern-todo-app-server-beta.vercel.app/post', {item: itemText})
       setListItems(prev => [...prev, res.data]);
+      setItemText('');
     }catch(err){
       console.log(err);
     }
@@ -65,8 +66,7 @@ function App() {
       const updatedItemIndex = listItems.findIndex(item => item._id === isUpdating);
       const updatedItem = listItems[updatedItemIndex].item = updateItemText;
       console.log(updatedItem)
-      setUpdateItemText('');
-      setIsUpdating('');
+      
     }catch(err){
       console.log(err);
     }
