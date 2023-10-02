@@ -17,7 +17,7 @@ function App() {
     }
   
     try{
-      const res = await axios.post('http://localhost:3002/post', {item: itemText})
+      const res = await axios.post('https://mern-todo-app-server-beta.vercel.app/post', {item: itemText})
       setListItems(prev => [...prev, res.data]);
       setItemText('');
     }catch(err){
@@ -29,7 +29,7 @@ function App() {
   useEffect(()=>{
     const getItemsList = async () => {
       try{
-        const res = await axios.get('http://localhost:3002/get')
+        const res = await axios.get('https://mern-todo-app-server-beta.vercel.app/get')
         setListItems(res.data);
         console.log('render')
       }catch(err){
@@ -42,7 +42,7 @@ function App() {
 
   const deleteItem = async (id) => {
     try{
-      const res = await axios.delete(`http://localhost:3002/delete/${id}`)
+      const res = await axios.delete(`https://mern-todo-app-server-beta.vercel.app/delete/${id}`)
       console.log(res)
       const newListItems = listItems.filter(item=> item._id !== id);
       setListItems(newListItems);
@@ -61,7 +61,7 @@ function App() {
     }
 
     try{
-      const res = await axios.put(`http://localhost:3002/put/${isUpdating}`, {item: updateItemText})
+      const res = await axios.put(`https://mern-todo-app-server-beta.vercel.app/put/${isUpdating}`, {item: updateItemText})
       console.log(res.data)
       const updatedItemIndex = listItems.findIndex(item => item._id === isUpdating);
       const updatedItem = listItems[updatedItemIndex].item = updateItemText;
