@@ -11,7 +11,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3002;
 
 app.use(cors( {
-  origin: [""],
+  origin: ["https://mern-todo-app-client-nine.vercel.app"],
   methods: ["POST","GET","PUT","DELETE"],
   credentials: true
 } 
