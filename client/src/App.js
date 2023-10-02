@@ -19,7 +19,6 @@ function App() {
     try{
       const res = await axios.post('https://mern-todo-app-server-beta.vercel.app/post', {item: itemText})
       setListItems(prev => [...prev, res.data]);
-      setItemText('');
     }catch(err){
       console.log(err);
     }
